@@ -43,8 +43,12 @@
 .input {
   font-size: 16px;
 }
-.ansMessage {
+.correctMessage {
   color: greenyellow;
+  font-size: 20px;
+}
+.incorrectMessage {
+  color: red;
   font-size: 20px;
 }
 .button {

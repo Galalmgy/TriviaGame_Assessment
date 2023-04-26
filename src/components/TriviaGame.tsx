@@ -7,6 +7,7 @@ const Game: FC = () => {
   );
   const [ansMessage, setAnsMessage] = useState<string>("");
   const [answer, setAnswer] = useState<string | null>("");
+  const [ansMessageClass, setAnsMessageClass] = useState("");
 
   useEffect(() => {
     question().then((question: TriviaQuestion) => {
@@ -18,8 +19,10 @@ const Game: FC = () => {
     const isCorrect = answer === currentQuestion?.correct_answer;
     if (isCorrect) {
       setAnsMessage("Correct");
+      setAnsMessageClass("correctMessage");
     } else {
       setAnsMessage("Incorrect");
+      setAnsMessageClass("incorrectMessage");
     }
   };
 
@@ -44,7 +47,7 @@ const Game: FC = () => {
         ></input>
       </p>
 
-      <p>{ansMessage && <p className="ansMessage">{ansMessage}</p>}</p>
+      <p>{ansMessage && <p className={ansMessageClass}>{ansMessage}</p>}</p>
       <button className="button" onClick={() => handleAnswer(answer)}>
         Submit
       </button>

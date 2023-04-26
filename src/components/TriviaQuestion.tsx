@@ -1,5 +1,4 @@
 export interface TriviaQuestion {
-  [x: string]: any;
   category: string;
   type: string;
   difficulty: string;

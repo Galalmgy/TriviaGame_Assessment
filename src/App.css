@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.question {
+  font-size: 20px;
+}
+.answer {
+  font-size: 20px;
+}

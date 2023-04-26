@@ -40,6 +40,15 @@
 .question {
   font-size: 20px;
 }
-.answer {
+.input {
+  font-size: 16px;
+}
+.ansMessage {
+  color: greenyellow;
   font-size: 20px;
+}
+.button {
+  margin: 2px;
+  padding: auto;
+  width: 100px;
 }

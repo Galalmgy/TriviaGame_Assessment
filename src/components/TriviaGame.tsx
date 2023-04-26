@@ -21,9 +21,14 @@ const Game: FC = () => {
     } else {
       setAnsMessage("Incorrect");
     }
+  };
+
+  const nextQuestion = async () => {
     const newQuestion = await question();
     setCurrentQuestion(newQuestion);
     setAnswer("");
+    setAnsMessage("");
+    console.log(newQuestion.correct_answer);
   };
 
   return (
@@ -31,16 +36,21 @@ const Game: FC = () => {
       <h3>Trivia Game</h3>
 
       <p className="question">{currentQuestion?.question} </p>
-      <p className="question">
+      <p className="input">
         Enter your answer{" "}
         <input
-          id="answer"
+          id="input"
           onChange={(event) => setAnswer(event.target.value)}
         ></input>
       </p>
-      <button onClick={() => handleAnswer(answer)}>Submit</button>
 
-      {ansMessage && <p>{ansMessage}</p>}
+      <p>{ansMessage && <p className="ansMessage">{ansMessage}</p>}</p>
+      <button className="button" onClick={() => handleAnswer(answer)}>
+        Submit
+      </button>
+      <button className="button" onClick={() => nextQuestion()}>
+        Next
+      </button>
     </div>
   );
 };

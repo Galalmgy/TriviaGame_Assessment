@@ -38,13 +38,14 @@ const Game: FC = () => {
     console.log(newQuestion.correct_answer);
   };
   const q = he.decode(String(currentQuestion?.question));
+  console.log("Question text:", q);
   return (
     <div>
       <h3>SMALL TRIVIA GAME</h3>
 
       <p className="question">{q} </p>
       <p className="inputAnswer">
-        Enter your answer{" "}
+        <label htmlFor="input">Enter your answer </label>
         <input
           id="input"
           onChange={(event) => setAnswer(event.target.value)}
